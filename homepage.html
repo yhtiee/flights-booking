@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    nav{
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+    }
+    .logo{
+        font-size: xx-large;
+        text-align: center;
+    }
+    nav .hamburger{
+        display: none;
+        
+    }
+    a{
+        margin-top: 0;
+        margin-bottom: 0;
+        margin: 50px;
+        text-decoration: none;
+        color: white;
+    }
+    .bar{
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: white;
+    }
+    @media screen and (max-width:900px){
+        nav .hamburger{
+            display: block;
+        }
+        .nav-list > a {
+            display: none;
+        }   
+    }
+    @media screen and (max-width:900px){
+         .nav-list.responsive {
+            position: relative;
+        } 
+       
+        .nav-list.responsive  {
+            
+            display: block;
+            text-align: left;
+        }
+    }
+</style>
+<body>
+    <nav>
+        <div class="logo"> en.Route </div>
+        <div class="nav-list" id="mynav-list">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+            <a href="">Signin</a>
+            <a href="">Signup</a>
+        </div>
+        <div class="hamburger" onclick="showNav()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    <script>
+        let hamburger = document.querySelector(".hamburger")
+        function showNav(){
+            let navlist = document.querySelector("#mynav-list")
+            navlist.classList.toggle("responsive")
+        }
+    </script>
+</body>
+</html>
